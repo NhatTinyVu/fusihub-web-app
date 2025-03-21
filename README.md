@@ -6,7 +6,14 @@ An over-engineered personal web app
 
 # Dev
 
-## Watch
+## Watch frontend
+
+```sh
+# Terminal 1 - To run the frontend server.
+moon run nextjs-frontend-app:dev
+```
+
+## Watch backend
 
 > NOTE: Install cargo watch with `cargo install cargo-watch`.
 

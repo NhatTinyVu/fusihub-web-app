@@ -1,0 +1,18 @@
+$schema: 'https://moonrepo.dev/schemas/toolchain.json'
+
+node:
+  version: '22.14.0'
+  packageManager: 'pnpm'
+  pnpm:
+    version: '10.6.5'
+  addEnginesConstraint: true
+  dedupeOnLockfileChange: true
+  dependencyVersionFormat: 'workspace'
+  syncProjectWorkspaceDependencies: true
+  syncVersionManagerConfig: 'nvm'
+
+typescript:
+  projectConfigFileName: 'tsconfig.json'
+  rootConfigFileName: 'tsconfig.json'
+  routeOutDirToCache: true
+  syncProjectReferences: true
