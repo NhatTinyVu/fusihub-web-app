@@ -1,0 +1,26 @@
+[workspace.lints.rust]
+unsafe_code = "forbid"
+# unused = { level = "allow", priority = -1 } # For exploratory dev.
+
+[workspace]
+resolver = "2"
+members = [
+    # -- Application Libraries
+    "libs/lib-web",
+    "libs/lib-utils",
+
+    # # -- Application Services
+    "services/web-backend-server",
+]
+
+[workspace.dependencies]
+# -- Serde
+serde_with = { version = "3", features = ["time_0_3"] }
+
+# -- Web
+axum = { version = "0.8.1", features = ["macros"] }
+tower-http = { version = "0.6.2", features = ["fs"] }
+
+# -- Others
+time = { version = "0.3.40", features = ["formatting", "parsing", "serde"] }
+derive_more = { version = "2.0.1", features = ["from", "display"] }
