@@ -6,11 +6,11 @@ unsafe_code = "forbid"
 resolver = "2"
 members = [
     # -- Application Libraries
-    "libs/lib-web",
-    "libs/lib-utils",
+    "crates/libs/lib-web",
+    "crates/libs/lib-utils",
 
     # # -- Application Services
-    "services/web-backend-server",
+    "crates/services/web-backend-server",
 ]
 
 [workspace.dependencies]
