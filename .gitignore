@@ -68,13 +68,6 @@ out/
 *.ogg
 *.avi
 
-# Images
-*.icns
-*.ico
-*.jpeg
-*.jpg
-*.png
-*.bmp
 
 # -- Nodejs
 node_modules/
