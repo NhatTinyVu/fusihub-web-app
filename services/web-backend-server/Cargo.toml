@@ -1,0 +1,19 @@
+[package]
+name = "web-backend-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+lib-utils = { path = "../../libs/lib-utils" }
+lib-web = { path = "../../libs/lib-web" }
+
+# -- Async
+tokio = { version = "1.44.1", features = ["full"] }
+axum = { workspace = true }
+
+[lints]
+workspace = true
+
+
+[dev-dependencies]
+httpc-test = "0.1.10"

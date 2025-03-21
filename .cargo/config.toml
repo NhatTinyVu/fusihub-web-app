@@ -1,0 +1,3 @@
+[env]
+## -- ConfigMap
+SERVICE_WEB_FOLDER = "web-folder/"
