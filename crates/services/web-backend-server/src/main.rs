@@ -12,7 +12,7 @@ use tokio::net::TcpListener;
 #[tokio::main]
 async fn main() -> Result<()> {
     let routes_all =
-        Router::new().fallback_service(routes_static::serve_dir(&web_config().WEB_FOLDER));
+        Router::new().fallback_service(routes_static::serve_dir(&web_config().STATIC_FILES_PATH));
 
     // region:    --- Start Server
     // Note: For this block, ok to unwrap.
