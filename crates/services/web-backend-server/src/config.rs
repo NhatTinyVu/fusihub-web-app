@@ -12,13 +12,13 @@ pub fn web_config() -> &'static WebConfig {
 
 #[allow(non_snake_case)]
 pub struct WebConfig {
-    pub WEB_FOLDER: String,
+    pub STATIC_FILES_PATH: String,
 }
 
 impl WebConfig {
     fn load_from_env() -> lib_utils::envs::Result<WebConfig> {
         Ok(WebConfig {
-            WEB_FOLDER: get_env("SERVICE_WEB_FOLDER")?,
+            STATIC_FILES_PATH: get_env("STATIC_FILES_PATH")?,
         })
     }
 }
