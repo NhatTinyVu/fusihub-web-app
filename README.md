@@ -3,6 +3,7 @@ An over-engineered personal web app
 
 # Inspired by
 [Rust Web App Production Blueprint](https://github.com/rust10x/rust-web-app)
+[Frontend monorepo with moon](https://github.com/moonrepo/examples/tree/master)
 
 # Dev
 
