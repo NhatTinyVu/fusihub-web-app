@@ -3,10 +3,18 @@ An over-engineered personal web app
 
 # Inspired by
 [Rust Web App Production Blueprint](https://github.com/rust10x/rust-web-app)
+[Frontend monorepo with moon](https://github.com/moonrepo/examples/tree/master)
 
 # Dev
 
-## Watch
+## Watch frontend
+
+```sh
+# Terminal 1 - To run the frontend server.
+moon run nextjs-frontend-app:dev
+```
+
+## Watch backend
 
 > NOTE: Install cargo watch with `cargo install cargo-watch`.
 

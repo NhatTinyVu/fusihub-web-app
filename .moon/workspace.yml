@@ -1,0 +1,18 @@
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+
+versionConstraint: '>=1.16.0'
+
+projects:
+  nextjs-frontend-app: 'apps/nextjs-frontend-app'
+
+vcs:
+  manager: 'git'
+  defaultBranch: 'main'
+
+runner:
+  archivableTargets:
+    - ':format'
+    - ':lint'
+    - ':test'
+    - ':typecheck'
+  logRunningCommand: true
