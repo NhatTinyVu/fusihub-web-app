@@ -16,7 +16,7 @@ async fn main() -> Result<()> {
 
     // region:    --- Start Server
     // Note: For this block, ok to unwrap.
-    let listener = TcpListener::bind("127.0.0.1:8080").await.unwrap();
+    let listener = TcpListener::bind("0.0.0.0:8080").await.unwrap();
     axum::serve(listener, routes_all.into_make_service())
         .await
         .unwrap();

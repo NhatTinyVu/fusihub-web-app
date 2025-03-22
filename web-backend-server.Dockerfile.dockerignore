@@ -1,0 +1,15 @@
+.*
+node_modules
+test
+apps
+target
+babel.config.js
+docker-compose.yml
+LICENSE
+package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+README.md
+tsconfig.eslint.json
+tsconfig.json
+tsconfig.options.json
