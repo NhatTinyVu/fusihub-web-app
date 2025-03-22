@@ -37,7 +37,7 @@ cargo build -p web-backend-server --release
 
 #### Build
 ```sh
-docker build -t web-backend-server . -f web-backend-server.Dockerfile
+docker build -t web-backend-server . -f ./scripts/web-backend-server.Dockerfile
 ```
 
 #### Run
@@ -46,6 +46,6 @@ docker run -d \
   -it --rm \
   -v ./static:/usr/local/bin/static:Z \
   --env STATIC_FILES_PATH=/usr/local/bin/static \
-  -p 80:8080 \
-  web-backend-server-prod:latest
+  -p 8080:8080 \
+  web-backend-server:latest
 ```
