@@ -1,4 +1,4 @@
-FROM lukemathwalker/cargo-chef:latest as chef
+FROM lukemathwalker/cargo-chef:latest AS chef
 WORKDIR /app
 
 FROM chef AS planner
@@ -13,6 +13,6 @@ COPY . .
 RUN cargo build -p web-backend-server --release
 RUN mv ./target/release/web-backend-server ./web-backend-server
 
-FROM debian:bookworm-slim AS runtime
+FROM gcr.io/distroless/cc-debian12 AS runtime
 COPY --from=builder /app/web-backend-server /usr/local/bin/
 CMD ["/usr/local/bin/web-backend-server"]
