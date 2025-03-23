@@ -5,6 +5,7 @@
 !.npmrc 
 !.nvmrc
 !.prettierignore
+node_modules
 crates
 scripts
 static
@@ -13,3 +14,14 @@ target
 docker-compose.yml
 LICENSE
 README.md
+Dockerfile
+.dockerignore
+**/.gitignore
+**/.gitkeep
+.git
+README.md
+**/node_modules
+**/.next
+npm-debug.log
+**/sitemap.xml
+**/rss.xml
