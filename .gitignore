@@ -6,6 +6,8 @@ _*
 # '_' in src dir, ok.
 !**/src/**/_*
 
+.env
+!.env.example
 *.lock
 *.lockb
 *.log
