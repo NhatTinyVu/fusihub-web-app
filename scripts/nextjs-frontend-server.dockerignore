@@ -1,0 +1,15 @@
+!.moon
+!.cargo
+!.eslintignore
+!.eslintrc.js
+!.npmrc 
+!.nvmrc
+!.prettierignore
+crates
+scripts
+static
+test
+target
+docker-compose.yml
+LICENSE
+README.md
