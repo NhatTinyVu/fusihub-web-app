@@ -26,22 +26,48 @@ cargo watch -q -c -w crates/services/web-backend-server/src/ -w crates/libs/ -w 
 cargo watch -q -c -w crates/services/web-backend-server/examples/ -x "run -p web-backend-server --example quick_dev"
 ```
 
-## Release
+# Release
 
-### Rust backend server
+## Nextjs frontend server
+```sh
+moon run nextjs-frontend-app:build
+```
+
+## Rust backend server
 ```sh
 cargo build -p web-backend-server --release
 ```
 
-### Docker 
+## Docker
 
-#### Build
+### Build
+
+#### Nextjs frontend server
+
+```sh
+docker build -t nextjs-frontend-server . -f ./scripts/nextjs-frontend-server.Dockerfile
+```
+#### Rust backend server
+
 ```sh
 docker build -t web-backend-server . -f ./scripts/web-backend-server.Dockerfile
 ```
 
-#### Run
+### Run
+
+#### Nextjs frontend server
+
 ```sh
+
+docker run -d \
+  -it --rm \
+  -p 3000:3000 \
+  nextjs-frontend-server:latest
+```
+#### Rust backend server
+
+```sh
+
 docker run -d \
   -it --rm \
   -v ./static:/usr/local/bin/static:Z \
