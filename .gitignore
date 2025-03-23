@@ -14,7 +14,7 @@ _*
 
 # -- Rust
 target/
-# !Cargo.lock # commented by default
+!Cargo.lock # commented by default
 !.cargo/
 !.moon/
 !.vscode/
