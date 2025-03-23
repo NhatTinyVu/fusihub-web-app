@@ -1,10 +1,10 @@
-FROM node:22.14-bookworm-slim AS base
+FROM node:22.14 AS base
 WORKDIR /app
 RUN npm install -g @moonrepo/cli
 
 FROM base AS builder
-WORKDIR /app
 COPY . .
+WORKDIR /app
 RUN moon run nextjs-frontend-app:build 
 
 FROM gcr.io/distroless/nodejs22-debian12 AS runtime

@@ -1,5 +1,12 @@
 .*
-node_modules
+**/node_modules
+Dockerfile
+.dockerignore
+.gitignore
+.git
+.env
+README.md
+target
 test
 apps
 target
