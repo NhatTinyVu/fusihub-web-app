@@ -7,6 +7,11 @@ An over-engineered personal web app
 
 # Dev
 
+## Init env
+```sh
+cp .env.example .env
+```
+
 ## Watch frontend
 
 ```sh
@@ -67,11 +72,8 @@ docker run -d \
 #### Rust backend server
 
 ```sh
-
 docker run -d \
   -it --rm \
-  -v ./static:/usr/local/bin/static:Z \
-  --env STATIC_FILES_PATH=/usr/local/bin/static \
   -p 8080:8080 \
   web-backend-server:latest
 ```

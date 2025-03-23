@@ -15,4 +15,6 @@ RUN mv ./target/release/web-backend-server ./web-backend-server
 
 FROM gcr.io/distroless/cc-debian12 AS runtime
 COPY --from=builder /app/web-backend-server /usr/local/bin/
+COPY --from=builder /app/static/ /usr/local/bin/static/
+ENV STATIC_FILES_PATH=/usr/local/bin/static
 CMD ["/usr/local/bin/web-backend-server"]

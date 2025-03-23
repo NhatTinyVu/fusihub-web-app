@@ -1,0 +1,39 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./scripts/nextjs-frontend-server.Dockerfile
+    depends_on:
+      - web-backend-server
+    restart: unless-stopped
+    container_name: nextjs-frontend-server
+    hostname: nextjs-frontend-server
+    ports:
+      - "3000:3000"
+    networks:
+      - fusihub
+
+  web-backend-server:
+    build:
+      context: .
+      dockerfile: ./scripts/web-backend-server.Dockerfile
+    restart: unless-stopped
+    container_name: web-backend-server
+    hostname: web-backend-server
+    ports:
+      - "8080:8080"
+    networks:
+      - fusihub
+
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflared
+    environment:
+      - TZ=Asia/Saigon
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    network_mode: host
+
+networks:
+  fusihub:
