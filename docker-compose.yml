@@ -1,17 +1,17 @@
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: ./scripts/nextjs-frontend-server.Dockerfile
-    depends_on:
-      - web-backend-server
-    restart: unless-stopped
-    container_name: nextjs-frontend-server
-    hostname: nextjs-frontend-server
-    ports:
-      - "3000:3000"
-    networks:
-      - fusihub
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: ./scripts/nextjs-frontend-server.Dockerfile
+  #   depends_on:
+  #     - web-backend-server
+  #   restart: unless-stopped
+  #   container_name: nextjs-frontend-server
+  #   hostname: nextjs-frontend-server
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - fusihub
 
   web-backend-server:
     build:
