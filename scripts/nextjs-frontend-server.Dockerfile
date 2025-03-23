@@ -1,8 +1,8 @@
 FROM node:22.14-bookworm-slim AS base
 WORKDIR /app
+RUN npm install -g @moonrepo/cli
 
 FROM base AS builder
-RUN npm install -g @moonrepo/cli
 WORKDIR /app
 COPY . .
 RUN moon run nextjs-frontend-app:build 
