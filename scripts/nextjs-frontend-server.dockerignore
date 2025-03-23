@@ -1,5 +1,6 @@
 .*
 !.moon
+!.cargo
 !.eslintignore
 !.eslintrc.js
 !.npmrc 
@@ -13,6 +14,3 @@ target
 docker-compose.yml
 LICENSE
 README.md
-tsconfig.eslint.json
-tsconfig.json
-tsconfig.options.json
