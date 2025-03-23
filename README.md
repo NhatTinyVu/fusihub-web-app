@@ -1,8 +1,13 @@
 # fusihub-web-app
 An over-engineered personal web app
+- Docker microservices
+- Multiple frontend server with nextjs/astro
+- API with Rust, Axum
+- Database with postgres
 
 # Inspired by
 [Rust Web App Production Blueprint](https://github.com/rust10x/rust-web-app)
+
 [Frontend monorepo with moon](https://github.com/moonrepo/examples/tree/master)
 
 # Dev
@@ -56,6 +61,13 @@ docker build -t nextjs-frontend-server . -f ./scripts/nextjs-frontend-server.Doc
 
 ```sh
 docker build -t web-backend-server . -f ./scripts/web-backend-server.Dockerfile
+```
+
+#### Docker compose
+- Place CLOUDFLARE_TUNNEL_TOKEN into .env before run docker-compose
+
+```sh
+docker-compose up -d
 ```
 
 ### Run
