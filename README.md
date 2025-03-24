@@ -21,7 +21,7 @@ cp .env.example .env
 
 ```sh
 # Terminal 1 - To run the frontend server.
-moon run nextjs-frontend-app:dev
+moon run nextjs-frontend-server:dev
 ```
 
 ## Watch backend
@@ -40,7 +40,7 @@ cargo watch -q -c -w crates/services/web-backend-server/examples/ -x "run -p web
 
 ## Nextjs frontend server
 ```sh
-moon run nextjs-frontend-app:build
+moon run nextjs-frontend-server:build
 ```
 
 ## Rust backend server
@@ -78,7 +78,7 @@ docker-compose up -d
 
 docker run -d \
   -it --rm \
-  -p 3000:3000 \
+  -p 127.0.0.1:3000:3000 \
   nextjs-frontend-server:latest
 ```
 #### Rust backend server
@@ -86,6 +86,6 @@ docker run -d \
 ```sh
 docker run -d \
   -it --rm \
-  -p 8080:8080 \
+  -p 127.0.0.1:8080:8080 \
   web-backend-server:latest
 ```

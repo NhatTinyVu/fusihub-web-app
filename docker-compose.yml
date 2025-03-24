@@ -9,7 +9,7 @@ services:
     container_name: nextjs-frontend-server
     hostname: nextjs-frontend-server
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     networks:
       - fusihub
 
@@ -21,7 +21,7 @@ services:
     container_name: web-backend-server
     hostname: web-backend-server
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
     networks:
       - fusihub
 
