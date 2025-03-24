@@ -1,3 +1,2 @@
 [env]
-## -- ConfigMap
 STATIC_FILES_PATH = "./static/"
