@@ -57,7 +57,7 @@ importers:
         specifier: ^5.4.5
         version: 5.8.2
 
-  apps/nextjs-frontend-app:
+  apps/nextjs-frontend-server:
     dependencies:
       next:
         specifier: 15.2.3

@@ -5,15 +5,15 @@ RUN npm install -g @moonrepo/cli
 FROM base AS builder
 COPY . .
 WORKDIR /app
-RUN moon run nextjs-frontend-app:build 
+RUN moon run nextjs-frontend-server:build 
 
 FROM gcr.io/distroless/nodejs22-debian12 AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
-COPY --from=builder /app/apps/nextjs-frontend-app/.next/standalone/ ./
-COPY --from=builder /app/apps/nextjs-frontend-app/public/ ./apps/nextjs-frontend-app/public/
-COPY --from=builder /app/apps/nextjs-frontend-app/.next/static/ ./apps/nextjs-frontend-app/.next/static/
+COPY --from=builder /app/apps/nextjs-frontend-server/.next/standalone/ ./
+COPY --from=builder /app/apps/nextjs-frontend-server/public/ ./apps/nextjs-frontend-server/public/
+COPY --from=builder /app/apps/nextjs-frontend-server/.next/static/ ./apps/nextjs-frontend-server/.next/static/
 EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
-CMD ["apps/nextjs-frontend-app/server.js"]
+CMD ["apps/nextjs-frontend-server/server.js"]

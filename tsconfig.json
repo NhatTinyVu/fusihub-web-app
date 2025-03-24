@@ -3,7 +3,7 @@
 	"files": [],
 	"references": [
 		{
-			"path": "apps/nextjs-frontend-app"
+			"path": "apps/nextjs-frontend-server"
 		}
 	]
 }
