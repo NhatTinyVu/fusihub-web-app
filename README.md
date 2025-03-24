@@ -41,6 +41,8 @@ cargo watch -q -c -w crates/services/web-backend-server/examples/ -x "run -p web
 ## Nextjs frontend server
 ```sh
 moon run nextjs-frontend-server:build
+
+moon run nextjs-frontend-server:start
 ```
 
 ## Rust backend server
@@ -67,7 +69,9 @@ docker build -t web-backend-server . -f ./scripts/web-backend-server.Dockerfile
 - Place CLOUDFLARE_TUNNEL_TOKEN into .env before run docker-compose
 
 ```sh
-docker-compose up -d
+docker-compose up -d --rm
+
+./target/release/web-backend-server
 ```
 
 ### Run
