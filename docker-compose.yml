@@ -2,7 +2,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: ./scripts/nextjs-frontend-server.Dockerfile
+      dockerfile: ./docker/nextjs-frontend-server.Dockerfile
     depends_on:
       - web-backend-server
     restart: unless-stopped
@@ -16,7 +16,7 @@ services:
   web-backend-server:
     build:
       context: .
-      dockerfile: ./scripts/web-backend-server.Dockerfile
+      dockerfile: ./docker/web-backend-server.Dockerfile
     restart: unless-stopped
     container_name: web-backend-server
     hostname: web-backend-server
