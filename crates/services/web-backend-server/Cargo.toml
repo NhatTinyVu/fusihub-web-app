@@ -4,12 +4,17 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+lib-core = { path = "../../libs/lib-core" }
 lib-utils = { path = "../../libs/lib-utils" }
 lib-web = { path = "../../libs/lib-web" }
+
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
 
 # -- Async
 tokio = { version = "1.44.1", features = ["full"] }
 axum = { workspace = true }
+tower-cookies = { workspace = true }
 
 # -- Tracing
 tracing = "0.1.41"
@@ -20,4 +25,4 @@ workspace = true
 
 
 [dev-dependencies]
-httpc-test = "0.1.10"
+lib-test = { path = "../../libs/lib-test" }

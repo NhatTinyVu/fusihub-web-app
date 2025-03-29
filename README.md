@@ -93,3 +93,10 @@ docker run -d \
   -p 127.0.0.1:8080:8080 \
   web-backend-server:latest
 ```
+
+
+# Add new lib & service
+```sh
+ cargo new crates/libs/lib-core --lib
+ cargo new crates/services/web-backend-server --bin
+ ```
