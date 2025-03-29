@@ -10,7 +10,7 @@ target
 test
 apps
 target
-scripts
+docker
 babel.config.js
 docker-compose.yml
 LICENSE

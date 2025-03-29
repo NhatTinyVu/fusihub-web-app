@@ -3,7 +3,7 @@ Cargo.lock
 Cargo.toml
 **/*.md
 crates
-scripts
+docker
 static
 test
 target

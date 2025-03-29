@@ -7,10 +7,9 @@ use serde_json::{Value, json};
 use tower_cookies::Cookies;
 use tracing::debug;
 
-pub async fn handle_hello_api(
+pub async fn handle_get_hello(
     State(_mm): State<ModelManager>,
     _cookies: Cookies,
-    Json(_payload): Json<LoginPayload>,
 ) -> Result<Json<Value>> {
     debug!("{:<12} - api_hello_handler", "HANDLER");
     let body = Json(json!({
@@ -20,5 +19,17 @@ pub async fn handle_hello_api(
     Ok(body)
 }
 
+pub async fn handle_post_hello(
+    State(_mm): State<ModelManager>,
+    _cookies: Cookies,
+    _payload: Json<Option<HelloPayload>>,
+) -> Result<Json<Value>> {
+    debug!("{:<12} - api_hello_handler", "HANDLER");
+    let body = Json(json!({
+        "success": true
+    }));
+
+    Ok(body)
+}
 #[derive(Debug, Deserialize)]
-pub struct LoginPayload {}
+pub struct HelloPayload {}

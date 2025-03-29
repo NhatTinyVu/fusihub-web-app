@@ -57,12 +57,12 @@ cargo build -p web-backend-server --release
 #### Nextjs frontend server
 
 ```sh
-docker build -t nextjs-frontend-server . -f ./scripts/nextjs-frontend-server.Dockerfile
+docker build -t nextjs-frontend-server . -f ./docker/nextjs-frontend-server.Dockerfile
 ```
 #### Rust backend server
 
 ```sh
-docker build -t web-backend-server . -f ./scripts/web-backend-server.Dockerfile
+docker build -t web-backend-server . -f ./docker/web-backend-server.Dockerfile
 ```
 
 #### Docker compose
