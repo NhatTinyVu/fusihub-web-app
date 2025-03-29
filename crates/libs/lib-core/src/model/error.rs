@@ -1,10 +1,8 @@
-use axum::response::{IntoResponse, Response};
 use serde::Serialize;
-use tracing::debug;
 
 pub type Result<T> = core::result::Result<T, Error>;
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Serialize)]
 pub enum Error {}
 
 impl core::fmt::Display for Error {
@@ -13,13 +11,4 @@ impl core::fmt::Display for Error {
     }
 }
 
-impl IntoResponse for Error {
-    fn into_response(self) -> Response {
-        debug!("{:<12} - model::Error {self:?}", "INTO_RES");
-        todo!()
-    }
-}
-
 impl std::error::Error for Error {}
-
-impl Error {}

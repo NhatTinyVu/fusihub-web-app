@@ -1,2 +1,10 @@
+# Environments variables set for all `cargo ...` commands.
 [env]
+# web-backend-server -> web_backend_server
+RUST_LOG = "web_backend_server=debug,lib_test=debug"
+
+# -- Service Environment Variables
+# IMPORTANT: 
+#   For cargo commands only.
+#   For deployed env, should be managed by container: docker, kubernetes, etc.
 STATIC_FILES_PATH = "./static/"

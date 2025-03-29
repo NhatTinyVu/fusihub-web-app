@@ -6,21 +6,21 @@ unsafe_code = "forbid"
 resolver = "2"
 members = [
     # -- Application Libraries
+    "crates/libs/lib-core",
     "crates/libs/lib-web",
     "crates/libs/lib-utils",
 
-    # # -- Application Services
-    "crates/services/web-backend-server",
+    # -- Application Services
+    "crates/services/web-backend-server", "crates/libs/lib-test",
 ]
 
 [workspace.dependencies]
 # -- Serde
-serde_with = { version = "3", features = ["time_0_3"] }
-
+serde_with = { version = "3.12.0", features = ["time_0_3"] }
 # -- Web
 axum = { version = "0.8.1", features = ["macros"] }
 tower-http = { version = "0.6.2", features = ["fs"] }
-
+tower-cookies = "0.11.0"
 # -- Others
-time = { version = "0.3.40", features = ["formatting", "parsing", "serde"] }
+time = { version = "0.3.41", features = ["formatting", "parsing", "serde"] }
 derive_more = { version = "2.0.1", features = ["from", "display"] }
