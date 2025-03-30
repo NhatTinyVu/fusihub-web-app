@@ -21,7 +21,7 @@ services:
     container_name: web-backend-server
     hostname: web-backend-server
     ports:
-      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8888:8888"
     networks:
       - fusihub
 
