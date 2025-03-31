@@ -1,0 +1,28 @@
+---
+services:
+  reverse-proxy:
+    image: traefik:v3.3.4
+    container_name: traefik-demo
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+      # security_opt:
+      #   - no-new-privileges:true
+    env_file:
+      - .env
+    environment:
+      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/:/etc/traefik/:ro
+      - ./certs/:/var/traefik/certs/:rw
+    # Dev only
+    network_mode: host
+    # networks:
+    #   - frontend
+    restart: unless-stopped
+
+# networks:
+#   frontend:
+#     external: true

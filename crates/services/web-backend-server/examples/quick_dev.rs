@@ -9,7 +9,7 @@ pub type Error = Box<dyn std::error::Error>; // For examples.
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let hc = lib_test::new_client("http://localhost:8080")?;
+    let hc = lib_test::new_client("http://localhost:8888")?;
 
     // static files
     hc.do_get("/api/index.html").await?.print().await?;

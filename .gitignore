@@ -1,6 +1,7 @@
 # -- Base
 .*
 !.gitignore
+**/certs/*
 
 _*
 # '_' in src dir, ok.

@@ -36,6 +36,13 @@ cargo watch -q -c -w crates/services/web-backend-server/src/ -w crates/libs/ -w 
 cargo watch -q -c -w crates/services/web-backend-server/examples/ -x "run -p web-backend-server --example quick_dev"
 ```
 
+## Local reverse proxy for dev
+```sh
+docker network create frontend
+cd docker/traefik
+docker-compose up -d
+```
+
 # Release
 
 ## Nextjs frontend server
@@ -90,7 +97,7 @@ docker run -d \
 ```sh
 docker run -d \
   -it --rm \
-  -p 127.0.0.1:8080:8080 \
+  -p 127.0.0.1:8888:8888 \
   web-backend-server:latest
 ```
 
