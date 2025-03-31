@@ -1,0 +1,34 @@
+# --> (Example) Expose an external service using Traefik...
+http:
+  routers:
+    nextjs-frontend-server:
+      rule: "Host(`local.fusihub.com`)"
+      service: nextjs-frontend-server #
+      priority: 1
+      entryPoints:
+        - web
+        - websecure
+      tls:
+        certResolver: cloudflare
+    web-backend-server:
+      rule: "Host(`local.fusihub.com`) && PathPrefix(`/api`)"
+      service: web-backend-server #
+      priority: 1
+      entryPoints:
+        - web
+        - websecure
+      tls:
+        certResolver: cloudflare
+
+  services:
+    nextjs-frontend-server:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:3000"
+        passHostHeader: true
+
+    web-backend-server:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8888"
+        passHostHeader: true
