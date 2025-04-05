@@ -3,6 +3,9 @@ name = "web-backend-server"
 version = "0.1.0"
 edition = "2024"
 
+[lints]
+workspace = true
+
 [dependencies]
 lib-core = { path = "../../libs/lib-core" }
 lib-utils = { path = "../../libs/lib-utils" }
@@ -18,11 +21,8 @@ tower-cookies = { workspace = true }
 
 # -- Tracing
 tracing = "0.1.41"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-
-[lints]
-workspace = true
-
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+derive_more = { workspace = true }
 
 [dev-dependencies]
 lib-test = { path = "../../libs/lib-test" }

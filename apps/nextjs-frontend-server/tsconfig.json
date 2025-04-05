@@ -19,7 +19,8 @@
 			}
 		],
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@fusihub/*": ["./src/fusihub/*"]
 		},
 		"outDir": "../../.moon/cache/types/apps/nextjs-frontend-server"
 	},

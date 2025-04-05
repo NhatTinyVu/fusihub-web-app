@@ -1,20 +1,15 @@
 {
-    "extends": "./tsconfig.options.json",
-    "include": [
-      "apps/**/*",
-      "packages/**/*",
-      "**/.eslintrc.js"
-    ],
-    "exclude": [
-      "**/.cache/**/*",
-      "**/.next/**/*",
-      "**/build/**/*",
-      "**/cjs/**/*",
-      "**/dist/**/*",
-      "**/esm/**/*",
-      "**/lib/**/*",
-      "**/mjs/**/*",
-      "**/node_modules/**/*"
-    ]
-  }
-  
+	"extends": "./tsconfig.options.json",
+	"include": ["apps/**/*", "packages/**/*", "**/.eslintrc.js"],
+	"exclude": [
+		"**/.cache/**/*",
+		"**/.next/**/*",
+		"**/build/**/*",
+		"**/cjs/**/*",
+		"**/dist/**/*",
+		"**/esm/**/*",
+		"**/lib/**/*",
+		"**/mjs/**/*",
+		"**/node_modules/**/*"
+	]
+}

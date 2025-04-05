@@ -8,7 +8,7 @@ use config::web_config;
 use lib_web::routes::routes_static;
 use tracing_subscriber::EnvFilter;
 
-use crate::web::routes_hello;
+use crate::web::{routes_health, routes_hello, routes_login};
 
 use axum::Router;
 use lib_core::model::ModelManager;
@@ -30,7 +30,9 @@ async fn main() -> Result<()> {
     let mm = ModelManager::new().await.unwrap();
 
     let routes_all = Router::new()
+        .merge(routes_health::routes())
         .merge(routes_hello::routes(mm.clone()))
+        .merge(routes_login::routes(mm.clone()))
         .layer(CookieManagerLayer::new())
         .fallback_service(routes_static::serve_dir(&web_config().STATIC_FILES_PATH));
 
