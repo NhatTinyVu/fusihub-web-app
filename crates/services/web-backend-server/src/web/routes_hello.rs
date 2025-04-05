@@ -4,9 +4,6 @@ use lib_web::handlers::handlers_hello;
 
 pub fn routes(mm: ModelManager) -> Router {
     Router::new()
-        .route(
-            "/api/hello",
-            get(handlers_hello::handle_get_hello).post(handlers_hello::handle_post_hello),
-        )
+        .route("/api/hello", get(handlers_hello::handle_get_hello))
         .with_state(mm)
 }
