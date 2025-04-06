@@ -1,6 +1,6 @@
 import { cn } from "@fusihub/utils";
 import NextImage from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 type ImageProps = Omit<
@@ -13,13 +13,17 @@ type ImageProps = Omit<
 >;
 
 const useLogoSrc = () => {
+  const [src, setSrc] = useState<string>("/favicon/favicon-96x96.png");
   const { theme } = useTheme();
-  const isDark =
-    theme === "dark" ||
-    (theme === "system" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-  return isDark ? "/favicon/favicon-96x96.png" : "/favicon/favicon-black.png";
+  useEffect(() => {
+    const isLight = theme === "light" || theme === undefined;
+    setSrc(
+      isLight ? "/favicon/favicon-black.png" : "/favicon/favicon-96x96.png"
+    );
+  }, [theme]);
+
+  return src;
 };
 
 const Logo = (props: ImageProps) => {
