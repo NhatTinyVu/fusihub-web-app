@@ -19,6 +19,6 @@ export const SITE_KEYWORDS = [
   "Axum",
 ];
 
-export const SITE_GITHUB_URL = "https://github.com/nhattinyvu";
+export const SITE_GITHUB_URL = "https://github.com/NhatTinyVu/fusihub-web-app";
 export const SITE_FACEBOOK_URL = "https://www.facebook.com/nhattinyvu";
 export const SITE_INSTAGRAM_URL = "https://www.instagram.com/nhattinyvu";

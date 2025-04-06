@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 
 import Link from "@/components/link";
 
-// import LocaleSwitcher from "./locale-switcher";
-// import MobileNav from "./mobile-nav";
 import Navbar from "./navbar";
-// import ThemeSwitcher from "./theme-switcher";
+import ThemeSwitcher from "./theme-switcher";
+import MobileNav from "./mobile-nav";
+import LocaleSwitcher from "./locale-switcher";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,10 +62,9 @@ const Header = () => {
       </Link>
       <div className="flex items-center gap-2">
         <Navbar />
-        {/* <ThemeSwitcher />
+        <ThemeSwitcher />
         <LocaleSwitcher />
-        <CommandMenu />
-        <MobileNav /> */}
+        <MobileNav />
       </div>
     </motion.header>
   );

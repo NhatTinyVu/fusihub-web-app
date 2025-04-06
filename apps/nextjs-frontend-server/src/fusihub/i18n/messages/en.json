@@ -1,12 +1,17 @@
 {
 	"about": {
-		"description": "Hello! I am Nhat Tiny Vu, a developer who loves Rust and React.",
+		"description": "A software engineer who loves crafting modern web solutions that are scalable, secure, and blazing fast.",
 		"title": "About"
 	},
 	"common": {
 		"cancel": "Cancel",
 		"delete": "Delete",
-		"error": "Error"
+		"error": "Error",
+		"likes": "{count, plural, =1 {# like} other {# likes}}",
+		"sign-in": "Sign in",
+		"sign-in-error": "Failed to sign in. Please try again.",
+		"sign-out": "Sign out",
+		"views": "{count, plural, =1 {# view} other {# views}}"
 	},
 	"component": {
 		"go-to-homepage": "Go to homepage"
@@ -14,6 +19,24 @@
 	"error": {
 		"something-went-wrong": "Something went wrong!",
 		"try-again": "Try again"
+	},
+	"command-menu": {
+		"actions": {
+			"copy-link": "Copy link",
+			"source-code": "Source code"
+		},
+		"groups": {
+			"account": "Account",
+			"general": "General",
+			"social": "Social"
+		},
+		"no-results": "No results found.",
+		"open-menu": "Open command menu",
+		"placeholder": "Type a command or search",
+		"trigger": {
+			"open-command": "Open Command",
+			"open-link": "Open Link"
+		}
 	},
 	"homepage": {
 		"intro": {

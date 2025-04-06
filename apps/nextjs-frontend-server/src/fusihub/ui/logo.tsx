@@ -1,6 +1,7 @@
 import { cn } from "@fusihub/utils";
 import NextImage from "next/image";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 type ImageProps = Omit<
   React.ComponentProps<typeof NextImage> & {
@@ -11,9 +12,20 @@ type ImageProps = Omit<
   "src" | "alt"
 >;
 
+const useLogoSrc = () => {
+  const { theme } = useTheme();
+  const isDark =
+    theme === "dark" ||
+    (theme === "system" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  return isDark ? "/favicon/favicon-96x96.png" : "/favicon/favicon-black.png";
+};
+
 const Logo = (props: ImageProps) => {
   const { className, imageClassName, lazy = true, ...rest } = props;
   const [isLoading, setIsLoading] = useState(true);
+  const logoSrc = useLogoSrc();
 
   return (
     <NextImage
@@ -21,7 +33,7 @@ const Logo = (props: ImageProps) => {
         isLoading && "scale-[1.02] blur-xl grayscale",
         imageClassName
       )}
-      src="/favicon/apple-touch-icon.png"
+      src={logoSrc}
       alt="fusihub"
       loading={lazy ? "lazy" : undefined}
       priority={!lazy}
