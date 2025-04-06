@@ -8,7 +8,7 @@ export const GITHUB_USERNAME = "nhattinyvu";
 
 export const SITE_NAME = "FusiHub";
 export const SITE_DESCRIPTION =
-  "A self-hosted, delightfully over-engineered personal website. Built with Next.js, Rust, and Axum. A place to share my thoughts and projects.";
+  "A self-hosted, personal website built with Next.js, and Axum - Rust.";
 export const SITE_KEYWORDS = [
   "nhattinyvu",
   "Next.js",

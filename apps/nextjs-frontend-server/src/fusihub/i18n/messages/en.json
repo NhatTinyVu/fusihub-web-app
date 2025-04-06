@@ -1,0 +1,67 @@
+{
+	"about": {
+		"description": "Hello! I am Nhat Tiny Vu, a developer who loves Rust and React.",
+		"title": "About"
+	},
+	"common": {
+		"cancel": "Cancel",
+		"delete": "Delete",
+		"error": "Error"
+	},
+	"component": {
+		"go-to-homepage": "Go to homepage"
+	},
+	"error": {
+		"something-went-wrong": "Something went wrong!",
+		"try-again": "Try again"
+	},
+	"homepage": {
+		"intro": {
+			"robust": "Robust",
+			"scalable": "Scalable",
+			"fantastic": "Fantastic",
+			"stack": "Next.js in the front, Rust in the back — a self-hosted playground of my own.",
+			"stunning": "Stunning",
+			"title-bottom": "using modern stacks",
+			"title-middle-left": "specializing in",
+			"title-middle-right": "web solutions",
+			"title-top": "I'm Nhat Tiny Vu, a Full Stack Engineer"
+		}
+	},
+	"layout": {
+		"about": "About",
+		"blog": "Blog",
+		"change-language": "Change language",
+		"dashboard": "Dashboard",
+		"facebook": "Facebook",
+		"github": "GitHub",
+		"guestbook": "Guestbook",
+		"home": "Home",
+		"instagram": "Instagram",
+		"links": "Links",
+		"now-playing": {
+			"error": "Failed to fetch Spotify data",
+			"loading": "Loading ...",
+			"not-listening": "Not Listening - Spotify"
+		},
+		"projects": "Projects",
+		"skip-to-main-content": "Skip to main content",
+		"toggle-menu": "Toggle menu",
+		"uses": "Uses",
+		"youtube": "YouTube"
+	},
+
+	"metadata": {
+		"site-description": "Nhat Tiny Vu • FullStack Engineer • Solution Architect",
+		"site-title": "Nhat Tiny Vu • A FullStack Engineer"
+	},
+	"not-found": "Page Not Found!",
+	"theme-toggle": {
+		"options": {
+			"dark": "Dark",
+			"light": "Light",
+			"system": "System"
+		},
+		"toggle-theme": "Toggle theme"
+	}
+}
