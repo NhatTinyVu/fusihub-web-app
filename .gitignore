@@ -2,6 +2,7 @@
 .*
 !.gitignore
 **/certs/*
+**/.content-collections
 
 _*
 # '_' in src dir, ok.

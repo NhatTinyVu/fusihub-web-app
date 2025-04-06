@@ -4,7 +4,7 @@ import {
   SiGithub,
   SiInstagram,
 } from "@icons-pack/react-simple-icons";
-import { PencilIcon, UserCircleIcon } from "lucide-react";
+import { HouseIcon, UserCircleIcon } from "lucide-react";
 
 import {
   SITE_FACEBOOK_URL,
@@ -20,7 +20,7 @@ type SocialLinks = Array<{
 
 export const HEADER_LINKS = [
   {
-    icon: <PencilIcon className="size-3.5" />,
+    icon: <HouseIcon className="size-3.5" />,
     href: "/",
     key: "home",
   },

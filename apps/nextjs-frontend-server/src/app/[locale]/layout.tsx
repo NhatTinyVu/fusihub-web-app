@@ -7,6 +7,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { notFound } from "next/navigation";
 import { i18n } from "@fusihub/i18n/config";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import "@/styles/globals.css";
 
@@ -114,9 +115,11 @@ const Layout = async (props: LayoutProps) => {
       suppressHydrationWarning
     >
       <body className="relative flex min-h-screen flex-col">
-        <Providers>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </Providers>
+        <NuqsAdapter>
+          <Providers>
+            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          </Providers>
+        </NuqsAdapter>
       </body>
     </html>
   );
