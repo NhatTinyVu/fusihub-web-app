@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Header from "./header";
+import Footer from "./footer";
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -9,11 +11,11 @@ const MainLayout = (props: MainLayoutProps) => {
 
   return (
     <>
-      {/* <div>Header</div> */}
+      <Header />
       <main className="mx-auto mb-16 w-full max-w-5xl flex-1 px-4 py-24 sm:px-8">
         {children}
       </main>
-      {/* <div>Footer</div> */}
+      <Footer />
       <Image
         width={1512}
         height={550}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
 };
 
-import AboutMe from "@/components/home/about-me";
+import Intro from "@/components/home/intro";
 
 const HomePage = async (_props: PageProps) => {
   const url = `${SITE_URL}`;
@@ -55,7 +55,7 @@ const HomePage = async (_props: PageProps) => {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <AboutMe />
+      <Intro />
     </>
   );
 };

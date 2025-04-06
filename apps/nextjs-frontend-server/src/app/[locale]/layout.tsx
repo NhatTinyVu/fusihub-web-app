@@ -1,30 +1,43 @@
 import type { Metadata, Viewport } from "next";
+import { hasLocale, NextIntlClientProvider } from "@fusihub/i18n/client";
+import { routing } from "@fusihub/i18n/routing";
+import { getTranslations, setRequestLocale } from "@fusihub/i18n/server";
+import { cn } from "@fusihub/utils";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+import { notFound } from "next/navigation";
+import { i18n } from "@fusihub/i18n/config";
 
 import "@/styles/globals.css";
 
-import {
-  SITE_KEYWORDS,
-  SITE_NAME,
-  SITE_DESCRIPTION,
-  SITE_URL,
-} from "@/libs/constants";
+import { SITE_KEYWORDS, SITE_URL } from "@/libs/constants";
 
-import Providers from "./providers";
+import Providers from "../providers";
 
 type LayoutProps = {
   children: React.ReactNode;
+  params: Promise<{
+    locale: string;
+  }>;
+};
+
+export const generateStaticParams = (): Array<{ locale: string }> => {
+  return i18n.locales.map((locale) => ({ locale }));
 };
 
 export const generateMetadata = async (
   props: LayoutProps
 ): Promise<Metadata> => {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: SITE_NAME,
-      template: `%s | ${SITE_NAME}`,
+      default: t("site-title"),
+      template: `%s | ${t("site-title")}`,
     },
-    description: SITE_DESCRIPTION,
+    description: t("site-description"),
     robots: {
       index: false,
       follow: false,
@@ -35,16 +48,16 @@ export const generateMetadata = async (
     openGraph: {
       url: SITE_URL,
       type: "website",
-      title: SITE_NAME,
-      siteName: SITE_NAME,
-      description: SITE_DESCRIPTION,
-      locale: "en_US",
+      title: t("site-title"),
+      siteName: t("site-title"),
+      description: t("site-description"),
+      locale,
       images: [
         {
           url: "/images/og.png",
           width: 1200,
           height: 630,
-          alt: SITE_DESCRIPTION,
+          alt: t("site-description"),
           type: "image/png",
         },
       ],
@@ -86,11 +99,24 @@ export const viewport: Viewport = {
 
 const Layout = async (props: LayoutProps) => {
   const { children } = props;
+  const { locale } = await props.params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={cn(GeistSans.variable, GeistMono.variable)}
+      suppressHydrationWarning
+    >
       <body className="relative flex min-h-screen flex-col">
-        <Providers>{children}</Providers>
+        <Providers>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );
