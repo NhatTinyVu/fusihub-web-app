@@ -65,7 +65,7 @@ const CONTENTS: ContentProps[] = [
     title: "WHO AM I",
     paragraphs: [
       "I'm a Full Stack Engineer based in Vietnam, passionate about cutting-edge technologies like Axum (Rust), Next.js, React, Astro, Remix, Postgres, cloud-native, serverless, and self-hosted architectures.",
-      "Recently, I've been diving deeper into platform engineering, Rust-based backend and infrastructure.",
+      "Recently, I've been diving deeper into platform engineering, Rust-based backend, networking and infrastructure.",
     ],
   },
   {
@@ -93,7 +93,7 @@ const CONTENTS: ContentProps[] = [
           "Built as a Docker Compose microservice stack, it's highly flexible and can be deployed on VPS, serverless platforms, or cloud-native environments with ease.",
       },
       {
-        title: "CDN",
+        title: "CDN & Networking",
         content:
           "Leveraging Cloudflared, the site is securely exposed to the internet with zero-cost egress, edge caching, and minimal overhead — I only pay for the domain.",
       },
