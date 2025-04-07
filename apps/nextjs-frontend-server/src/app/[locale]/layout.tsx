@@ -55,11 +55,11 @@ export const generateMetadata = async (
       locale,
       images: [
         {
-          url: "/images/og.png",
+          url: "/images/og.jpg",
           width: 1200,
           height: 630,
           alt: t("site-description"),
-          type: "image/png",
+          type: "image/jpeg",
         },
       ],
     },

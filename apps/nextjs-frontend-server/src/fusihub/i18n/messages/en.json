@@ -78,8 +78,8 @@
 	},
 
 	"metadata": {
-		"site-description": "Nhat Tiny Vu • FullStack Engineer • Solution Architect",
-		"site-title": "Nhat Tiny Vu • A FullStack Engineer"
+		"site-description": "A personal self-hosted microservice website powered by Axum (Rust) and Next.js.",
+		"site-title": "Fusion Hub"
 	},
 	"not-found": "Page Not Found!",
 	"theme-toggle": {
