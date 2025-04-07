@@ -4,6 +4,10 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: Readonly<LayoutProps>) {
+const Layout = (props: LayoutProps) => {
+  const { children } = props;
+
   return <MainLayout>{children}</MainLayout>;
-}
+};
+
+export default Layout;

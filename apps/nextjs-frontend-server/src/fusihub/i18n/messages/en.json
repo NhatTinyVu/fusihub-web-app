@@ -52,6 +52,14 @@
 			"title-middle-left": "building",
 			"title-middle-right": "web solutions",
 			"title-top": "I'm Nhat Tiny Vu, full-stack engineer"
+		},
+		"about-me": {
+			"connect": "Connect",
+			"fav-framework": "Fav. framework",
+			"location": "Vietnam",
+			"more": "Know more about me",
+			"stacks": "Stacks",
+			"title": "About Me"
 		}
 	},
 	"layout": {
