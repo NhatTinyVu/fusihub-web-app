@@ -84,8 +84,8 @@ const Page = async (props: PageProps) => {
   setRequestLocale(locale);
   const t = await getTranslations();
   const page = getPageMdx(locale);
-  const title = page?.title ?? t("title");
-  const description = page?.summary ?? t("description");
+  const title = page?.title ?? t("about.title");
+  const description = page?.summary ?? t("about.description");
   const url = `${SITE_URL}${getLocalizedPath({ slug: "/about", locale })}`;
 
   const jsonLd: WithContext<AboutPage> = {
