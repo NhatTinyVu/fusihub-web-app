@@ -43,6 +43,17 @@ export const generateMetadata = async (
   const page = getPageMdx(locale);
   const title = page?.title ?? t("title");
   const description = page?.summary ?? t("description");
+  const images = page?.ogImageUrl
+    ? {
+        images: [
+          {
+            url: page?.ogImageUrl,
+            alt: description,
+            type: page?.ogImageType ?? "image/jpeg",
+          },
+        ],
+      }
+    : {};
 
   return {
     title,
@@ -52,6 +63,7 @@ export const generateMetadata = async (
     },
     openGraph: {
       ...previousOpenGraph,
+      ...images,
       url,
       type: "profile",
       title,
