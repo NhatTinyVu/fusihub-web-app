@@ -38,17 +38,20 @@
 			"open-link": "Open Link"
 		}
 	},
+	"mdx": {
+		"link-to-section": "Link to section"
+	},
 	"homepage": {
 		"intro": {
-			"robust": "Robust",
+			"fast": "Fast",
 			"scalable": "Scalable",
-			"fantastic": "Fantastic",
+			"maintainable": "Maintainable",
 			"stack": "Next.js in the front, Rust in the back — a self-hosted playground of my own.",
 			"stunning": "Stunning",
-			"title-bottom": "using modern stacks",
-			"title-middle-left": "specializing in",
+			"title-bottom": "with cutting-edge tech.",
+			"title-middle-left": "building",
 			"title-middle-right": "web solutions",
-			"title-top": "I'm Nhat Tiny Vu, a Full Stack Engineer"
+			"title-top": "I'm Nhat Tiny Vu, full-stack engineer"
 		}
 	},
 	"layout": {

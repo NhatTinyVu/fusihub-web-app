@@ -9,10 +9,21 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@shikijs/rehype": "^3.2.1",
+		"@shikijs/transformers": "^3.2.1",
+		"github-slugger": "^2.0.0",
+		"remark": "^15.0.1",
+		"remark-gfm": "^4.0.1",
+		"shiki": "^3.2.1",
+		"unified": "^11.0.5",
+		"unist-util-visit": "^5.0.0",
+		"markdown-to-jsx": "^7.7.4",
+
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"next": "15.2.3",
 		"nuqs": "^2.4.1",
+		"merge-refs": "^2.0.0",
 
 		"next-intl": "^4",
 		"dayjs": "^1.11.13",
@@ -35,9 +46,17 @@
 		"@radix-ui/react-visually-hidden": "^1.1.2",
 		"@radix-ui/react-dialog": "^1.1.6",
 		"@radix-ui/react-tooltip": "^1.1.8",
+		"@radix-ui/react-scroll-area": "^1.2.3",
+		"@radix-ui/react-aspect-ratio": "^1.1.2",
 		"@radix-ui/react-separator": "^1.1.2"
 	},
 	"devDependencies": {
+		"@content-collections/core": "^0.8.2",
+		"@content-collections/next": "^0.2.6",
+		"@content-collections/mdx": "^0.2.2",
+		"@types/hast": "^3.0.4",
+		"@types/mdast": "^4.0.4",
+
 		"typescript": "^5",
 		"@types/node": "^22.13.10",
 		"@types/react": "^19",

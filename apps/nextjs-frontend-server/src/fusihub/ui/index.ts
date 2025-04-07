@@ -13,3 +13,8 @@ export * from "./toaster";
 export * from "./tooltip";
 export * from "./table";
 export * from "./separator";
+export * from "./code-block";
+export * from "./scroll-area";
+export * from "./aspect-ratio";
+export * from "./tree-view";
+export { createListCollection, createTreeCollection } from "@ark-ui/react";
