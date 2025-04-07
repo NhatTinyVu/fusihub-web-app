@@ -39,6 +39,8 @@ const pages = defineCollection({
   schema: (z) => ({
     title: z.string(),
     summary: z.string(),
+    ogImageUrl: z.string().optional(),
+    ogImageType: z.string().optional(),
   }),
   transform,
 });
