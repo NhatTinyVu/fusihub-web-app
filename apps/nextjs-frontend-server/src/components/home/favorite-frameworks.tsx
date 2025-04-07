@@ -13,7 +13,9 @@ const FavoriteFrameworks = () => {
     <div className="shadow-feature-card flex flex-col gap-6 rounded-xl p-6 lg:p-6">
       <div className="flex items-center gap-2">
         <HeartIcon className="size-[18px]" />
-        <h2 className="text-sm">{t("homepage.about-me.fav-framework")}</h2>
+        <h2 className="text-sm">
+          {t("homepage.about-me.favorite-frameworks")}
+        </h2>
       </div>
       <div className="flex items-center justify-center gap-6">
         <SiRust size={80} className="text-zinc-800 dark:text-zinc-200" />
