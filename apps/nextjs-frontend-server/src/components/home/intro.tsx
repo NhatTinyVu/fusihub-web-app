@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const TEXTS = [
   {
-    key: "robust",
+    key: "fast",
     className:
       "bg-clip-text text-center text-transparent bg-linear-to-r from-[#ff1835] to-[#ffc900]",
   },
@@ -17,7 +17,7 @@ const TEXTS = [
       "bg-clip-text text-center text-transparent bg-linear-to-r from-[#0077ff] to-[#00e7df]",
   },
   {
-    key: "fantastic",
+    key: "maintainable",
     className:
       "bg-clip-text text-center text-transparent bg-linear-to-r from-[#7f00de] to-[#ff007f]",
   },
@@ -91,7 +91,7 @@ const Hero = () => {
     <div className="my-16 space-y-6">
       <div className="flex justify-between gap-8">
         <div className="flex flex-col gap-4">
-          <h1 className="flex flex-col flex-wrap gap-2 text-xl font-bold sm:text-3xl">
+          <h1 className="flex flex-col flex-wrap gap-2 text-lg font-bold sm:text-3xl">
             <motion.div
               initial={{ x: 20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

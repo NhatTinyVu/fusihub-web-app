@@ -1,7 +1,7 @@
 export const isProduction = process.env.NODE_ENV === "production";
 
 export const SITE_URL = isProduction
-  ? "https://fusihub.me"
+  ? "https://fusihub.com"
   : "http://local.fusihub.com";
 
 export const GITHUB_USERNAME = "nhattinyvu";

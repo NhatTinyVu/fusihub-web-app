@@ -6,16 +6,16 @@ const middleware = (request: NextRequest) => {
   const csp = `
     default-src 'self';
     script-src 'self' 'unsafe-inline' 'unsafe-eval' *.fusihub.com unpkg.com;
-    style-src 'self' 'unsafe-inline' *.fusihub.com;
+    style-src 'self' 'unsafe-inline' fusihub.com *.fusihub.com;
     img-src * blob: data:;
-    font-src 'self' data: *.fusihub.com;
+    font-src 'self' data: fusihub.com *.fusihub.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
     connect-src *;
     media-src 'self';
     frame-ancestors 'none';
-    frame-src *.fusihub.com;
+    frame-src fusihub.com *.fusihub.com;
     block-all-mixed-content;
     upgrade-insecure-requests;
     worker-src blob: 'self';

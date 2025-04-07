@@ -8,20 +8,23 @@ type ImageProps = Omit<
     imageClassName?: string;
     lazy?: boolean;
     src?: string;
+    theme?: "light" | "dark";
   },
   "src" | "alt"
 >;
 
-const useLogoSrc = () => {
+const useLogoSrc = (props?: { theme?: "light" | "dark" }) => {
   const [src, setSrc] = useState<string>("/favicon/favicon-96x96.png");
   const { theme } = useTheme();
 
   useEffect(() => {
-    const isLight = theme === "light" || theme === undefined;
+    const isLight = props?.theme
+      ? props?.theme === "light"
+      : theme === "light" || theme === undefined;
     setSrc(
       isLight ? "/favicon/favicon-black.png" : "/favicon/favicon-96x96.png"
     );
-  }, [theme]);
+  }, [props?.theme, theme]);
 
   return src;
 };
@@ -29,7 +32,7 @@ const useLogoSrc = () => {
 const Logo = (props: ImageProps) => {
   const { className, imageClassName, lazy = true, ...rest } = props;
   const [isLoading, setIsLoading] = useState(true);
-  const logoSrc = useLogoSrc();
+  const logoSrc = useLogoSrc({ theme: props?.theme });
 
   return (
     <NextImage

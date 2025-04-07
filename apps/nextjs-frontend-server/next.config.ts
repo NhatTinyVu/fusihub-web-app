@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-
+import { withContentCollections } from "@content-collections/next";
 const nextConfig: NextConfig = {
   output: "standalone",
   allowedDevOrigins: ["localhost", "*.fusihub.com", "fusihub.com"],
@@ -14,4 +14,4 @@ const nextConfig: NextConfig = {
 
 const withNextIntl = createNextIntlPlugin();
 
-export default withNextIntl(nextConfig);
+export default withContentCollections(withNextIntl(nextConfig));

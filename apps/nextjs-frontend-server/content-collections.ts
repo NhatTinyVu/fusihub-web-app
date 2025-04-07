@@ -1,0 +1,48 @@
+import {
+  type Context,
+  defineCollection,
+  defineConfig,
+  type Meta,
+} from "@content-collections/core";
+import { compileMDX } from "@content-collections/mdx";
+import { getTOC, rehypePlugins, remarkPlugins } from "@fusihub/mdx-plugins";
+
+type BaseDoc = {
+  _meta: Meta;
+  content: string;
+};
+
+const transform = async <D extends BaseDoc>(document: D, context: Context) => {
+  const code = await compileMDX(context, document, {
+    remarkPlugins,
+    rehypePlugins,
+  });
+  const [locale, path] = document._meta.path.split(/[/\\]/);
+
+  if (!locale || !path) {
+    throw new Error(`Invalid path: ${document._meta.path}`);
+  }
+
+  return {
+    ...document,
+    code,
+    locale,
+    slug: path,
+    toc: await getTOC(document.content),
+  };
+};
+
+const pages = defineCollection({
+  name: "Page",
+  directory: "src/content/pages",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    summary: z.string(),
+  }),
+  transform,
+});
+
+export default defineConfig({
+  collections: [pages],
+});

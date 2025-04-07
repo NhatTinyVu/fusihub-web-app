@@ -20,7 +20,8 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
-			"@fusihub/*": ["./src/fusihub/*"]
+			"@fusihub/*": ["./src/fusihub/*"],
+			"content-collections": ["./.content-collections/generated"]
 		},
 		"outDir": "../../.moon/cache/types/apps/nextjs-frontend-server"
 	},
