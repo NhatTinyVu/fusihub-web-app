@@ -3,6 +3,56 @@
 		"description": "A software engineer who loves crafting modern web solutions that are scalable, secure, and blazing fast.",
 		"title": "About"
 	},
+	"blog": {
+		"comments": {
+			"author": "Author",
+			"comment-cannot-be-empty": "Comment cannot be empty",
+			"comment-posted": "Comment posted",
+			"comments": "{count, plural, =1 {comment} other {comments}}",
+			"confirm-delete-comment": "Are you sure you want to delete this comment? This action cannot be undone.",
+			"copy-link": "Copy Link",
+			"delete-a-comment": "Delete a comment",
+			"deleted-a-comment": "Deleted a comment",
+			"dislike": "Dislike",
+			"failed-to-load-comments": "Failed to load comments. Please refresh the page.",
+			"failed-to-load-replies": "Failed to load replies. Please refresh the page.",
+			"like": "Like",
+			"link-copied": "Link copied to clipboard",
+			"need-logged-in-to-rate": "You need to be logged in to rate comments",
+			"newest": "Newest",
+			"no-comments": "No comments",
+			"oldest": "Oldest",
+			"open-menu": "Open menu",
+			"placeholder": "Leave a comment",
+			"replies": "{count, plural, =1 {reply} other {replies}}",
+			"reply": "Reply",
+			"reply-cannot-be-empty": "Reply cannot be empty",
+			"reply-posted": "Reply posted",
+			"reply-to-comment": "Reply to comment",
+			"send-comment": "Send comment",
+			"sort-by": "Sort by",
+			"this-comment-has-been-deleted": "[This comment has been deleted]",
+			"toggle-bold": "Toggle bold",
+			"toggle-italic": "Toggle italic",
+			"toggle-strikethrough": "Toggle strikethrough"
+		},
+		"description": "My personal website and blog where I share my thoughts on various topics including tutorials, notes, and personal experiences. As a full-stack engineer from Hong Kong, I started learning web development as a hobby in December 2020. I use Next.js for building websites, GitHub for code hosting, and Vercel for deployment. Explore my site to learn more about my Journey and discover some of the web development resources that have inspired me.",
+		"footer": {
+			"edit-on-github": "Edit on GitHub",
+			"last-updated": "Last updated: {date}"
+		},
+		"header": {
+			"comments": "Comments",
+			"published-on": "Published on",
+			"views": "Views",
+			"written-by": "Written by"
+		},
+		"like": "Like",
+		"like-limit-reached": "You can only like 3 times per post",
+		"like-this-post": "Like this post",
+		"on-this-page": "On this page",
+		"title": "Blog"
+	},
 	"common": {
 		"cancel": "Cancel",
 		"delete": "Delete",
@@ -14,6 +64,10 @@
 		"views": "{count, plural, =1 {# view} other {# views}}"
 	},
 	"component": {
+		"list-blog-posts": {
+			"no-posts-found": "No posts found",
+			"placeholder": "Search articles"
+		},
 		"go-to-homepage": "Go to homepage"
 	},
 	"error": {
@@ -86,7 +140,7 @@
 	},
 
 	"metadata": {
-		"site-description": "A personal self-hosted microservice website powered by Axum (Rust) and Next.js.",
+		"site-description": "A personal self-hosted microservices website powered by Axum (Rust) and Next.js.",
 		"site-title": "Fusion Hub"
 	},
 	"not-found": "Page Not Found!",

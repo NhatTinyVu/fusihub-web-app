@@ -1,0 +1,69 @@
+---
+title: The Engine Behind This Blog
+date: "2025-04-07T21:00:00Z"
+modifiedTime: "2025-04-07T21:00:00Z"
+summary: Built with Next.js, Axum (Rust), and Docker — a self-hosted microservices setup powering this blog with speed, control, and modern architecture.
+ogImageUrl: "/images/nextjs-rust.jpg"
+ogImageType: "image/jpg"
+---
+
+## 🚀 Why [Next.js](https://nextjs.org/)
+
+- This blog runs on a <b>monorepo</b> that supports all the modern frontend frameworks—[Next.js](https://nextjs.org/), [Astro](https://astro.build/), [Remix](https://remix.run/), [React](https://react.dev/), or [Vite](https://vite.dev).
+
+- I chose [Next.js](https://nextjs.org/) for its <b>speed</b>, <b>flexibility</b>, and <b>fullstack capabilities</b>. It’s a powerhouse for getting things built fast.
+
+- But I’m not locked in—[Astro](https://astro.build/) and [Vite](https://vite.dev) are on my radar for future iterations.
+
+## ⚙️ Why [Axum (Rust)](https://github.com/tokio-rs/axum)
+
+- [Next.js](https://nextjs.org/) handles the frontend like a champ—but backend? Not so much, especially when it comes to scaling and dealing with databases like [Postgres](https://www.postgresql.org/).
+
+- So I took a cleaner route:
+
+  - The <b>/api</b> routes are offloaded to [Axum (Rust)](https://github.com/tokio-rs/axum) via [RPC Bevy style](https://github.com/bevyengine/bevy) , sitting behind a reverse proxy. Here's why that rocks:
+
+    - [Rust](https://www.rust-lang.org/) is lightning-fast, memory-safe, and built for performance.
+
+    - [Axum](https://github.com/tokio-rs/axum) runs on [Tokio](https://tokio.rs/), making async tasks a
+      breeze with work stealing.
+
+    - [Tower](https://github.com/tower-rs/tower) ecosystem gives me a powerful, modular service layer—perfect
+      for backend logic.
+
+- Fast, safe, and built to scale.
+
+## 🐳 Why Docker + [Docker Compose](https://docs.docker.com/compose/)
+
+- Containers are the backbone of this setup. Here's the deal:
+
+  - <b>No vendor lock-in</b> — each service is containerized and deployable
+    anywhere: serverless, cloud-native, Kubernetes, you name it.
+
+  - <b>Docker networks</b> make communication between services simple and
+    efficient.
+
+  - <b>Kubernetes</b>? Too heavy for this blog. Docker Compose keeps things
+    lightweight and easy to manage.
+
+## 🏡 Why Self-Hosted with [Proxmox](https://www.proxmox.com/)
+
+- This blog runs on my very own homelab — and I love it.
+
+  - It’s a sandbox for me to grow my DevOps and cloud skills.
+
+  - I gave new life to an old 2013 MacBook with [Proxmox](https://www.proxmox.com/).
+
+  - [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) gives me secure, zero-cost egress—unlike cloud providers that nickel-and-dime you for traffic.
+
+- Simple, cost-effective, and fun to build.
+
+## 🔐 [WireGuard](https://www.wireguard.com/) & [Tailscale](https://tailscale.com/) for Local Networking
+
+- Even at home, security matters.
+
+  - [WireGuard](https://www.wireguard.com/) encrypts local traffic, because privacy should never be optional.
+
+  - [Tailscale](https://tailscale.com/) makes secure networking across all my devices effortless—plus, their free plan is generous.
+
+- No more headaches. Just encrypted, seamless connectivity.
