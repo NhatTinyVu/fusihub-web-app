@@ -45,6 +45,21 @@ const pages = defineCollection({
   transform,
 });
 
+const blogPosts = defineCollection({
+  name: "blogPost",
+  directory: "src/content/blog",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    date: z.string(),
+    modifiedTime: z.string(),
+    summary: z.string(),
+    ogImageUrl: z.string().optional(),
+    ogImageType: z.string().optional(),
+  }),
+  transform,
+});
+
 export default defineConfig({
-  collections: [pages],
+  collections: [pages, blogPosts],
 });

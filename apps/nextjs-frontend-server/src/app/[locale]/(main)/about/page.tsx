@@ -72,13 +72,6 @@ export const generateMetadata = async (
   };
 };
 
-type ContentProps = {
-  key: string;
-  title: string;
-  paragraphs?: string[];
-  listItems?: { title: string; content: string }[];
-};
-
 const Page = async (props: PageProps) => {
   const { locale } = await props.params;
   setRequestLocale(locale);

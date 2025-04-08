@@ -4,7 +4,7 @@ import {
   SiGithub,
   SiInstagram,
 } from "@icons-pack/react-simple-icons";
-import { HouseIcon, UserCircleIcon } from "lucide-react";
+import { HouseIcon, NewspaperIcon, UserCircleIcon } from "lucide-react";
 
 import {
   SITE_FACEBOOK_URL,
@@ -25,6 +25,11 @@ export const HEADER_LINKS = [
     key: "home",
   },
   {
+    icon: <NewspaperIcon className="size-3.5" />,
+    href: "/blog",
+    key: "blog",
+  },
+  {
     icon: <UserCircleIcon className="size-3.5" />,
     href: "/about",
     key: "about",
@@ -36,6 +41,7 @@ export const FOOTER_LINKS = [
     id: 1,
     links: [
       { href: "/", key: "home" },
+      { href: "/blog", key: "blog" },
       { href: "/about", key: "about" },
     ],
   },
