@@ -10,8 +10,10 @@ use tracing_subscriber::EnvFilter;
 
 use crate::web::{routes_health, routes_hello, routes_login};
 
-use axum::Router;
 use lib_core::model::ModelManager;
+use lib_web::middlewares::{middlewares_request_stamp, middlewares_response_map};
+
+use axum::{Router, middleware};
 use tokio::net::TcpListener;
 use tower_cookies::CookieManagerLayer;
 use tracing::info;
@@ -32,8 +34,14 @@ async fn main() -> Result<()> {
     let routes_all = Router::new()
         .merge(routes_health::routes())
         .merge(routes_hello::routes(mm.clone()))
+        .layer(middleware::map_response(
+            middlewares_response_map::map_response,
+        ))
         .merge(routes_login::routes(mm.clone()))
         .layer(CookieManagerLayer::new())
+        .layer(middleware::from_fn(
+            middlewares_request_stamp::resolve_request_stamp,
+        ))
         .fallback_service(routes_static::serve_dir(&web_config().STATIC_FILES_PATH));
 
     let listener = TcpListener::bind("0.0.0.0:8888").await.unwrap();

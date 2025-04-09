@@ -7,6 +7,7 @@ import { BlurImage } from "@fusihub/ui";
 import { useFormattedDate } from "@/hooks/use-formatted-date";
 
 import Link from "./link";
+import { getImageFromUrl } from "@/fusihub/utils";
 
 type BlogPostCardsProps = {
   blogPosts: BlogPost[];
@@ -27,7 +28,8 @@ const BlogPostCards = (props: BlogPostCardsProps) => {
 };
 
 const BlogPostCard = (props: BlogPostCardProps) => {
-  const { slug, title, summary, date, ogImageUrl } = props;
+  const { slug, title, summary, date, imageUrl } = props;
+  const image = getImageFromUrl(imageUrl);
   const formattedDate = useFormattedDate(date);
 
   return (
@@ -36,7 +38,7 @@ const BlogPostCard = (props: BlogPostCardProps) => {
       className="shadow-feature-card group rounded-xl px-2 py-4"
     >
       <BlurImage
-        src={ogImageUrl ?? "/images/og.jpg"}
+        src={image.url}
         className="rounded-lg"
         width={1200}
         height={630}

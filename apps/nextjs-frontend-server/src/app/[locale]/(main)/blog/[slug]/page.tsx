@@ -11,6 +11,7 @@ import { getLocalizedPath } from "@/utils/get-localized-path";
 
 import Providers from "./providers";
 import PageTitle from "@/components/page-title";
+import { getImageFromUrl } from "@/fusihub/utils";
 
 type PageProps = {
   params: Promise<{
@@ -42,9 +43,9 @@ export const generateMetadata = async (
 
   if (!blogPost) return {};
 
-  const { date, modifiedTime, title, summary, ogImageUrl, ogImageType } =
-    blogPost;
+  const { date, modifiedTime, title, summary, imageUrl } = blogPost;
 
+  const image = getImageFromUrl(imageUrl);
   const ISOPublishedTime = new Date(date).toISOString();
   const ISOModifiedTime = new Date(modifiedTime).toISOString();
   const previousOpenGraph = (await parent).openGraph ?? {};
@@ -67,11 +68,11 @@ export const generateMetadata = async (
       authors: SITE_URL,
       images: [
         {
-          url: ogImageUrl ?? "/images/og.jpg",
+          url: image.url,
           width: 1200,
           height: 630,
           alt: title,
-          type: ogImageType ?? "image/png",
+          type: image.type,
         },
       ],
     },
@@ -92,7 +93,8 @@ const Page = async (props: PageProps) => {
     notFound();
   }
 
-  const { title, summary, date, modifiedTime, code, ogImageUrl } = blogPost;
+  const { title, summary, date, modifiedTime, code, imageUrl } = blogPost;
+  const image = getImageFromUrl(imageUrl);
 
   const jsonLd: WithContext<Article> = {
     "@context": "https://schema.org",
@@ -103,7 +105,7 @@ const Page = async (props: PageProps) => {
     url,
     datePublished: date,
     dateModified: modifiedTime,
-    image: ogImageUrl ?? "/images/og.jpg",
+    image: image.url,
     author: {
       "@type": "Person",
       name: SITE_NAME,

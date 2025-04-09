@@ -17,6 +17,7 @@ import {
 import { getLocalizedPath } from "@/utils/get-localized-path";
 
 import { allPages } from "content-collections";
+import { getImageFromUrl } from "@/fusihub/utils";
 
 type PageProps = {
   params: Promise<{
@@ -43,13 +44,14 @@ export const generateMetadata = async (
   const page = getPageMdx(locale);
   const title = page?.title ?? t("title");
   const description = page?.summary ?? t("description");
-  const images = page?.ogImageUrl
+  const image = getImageFromUrl(page?.imageUrl);
+  const images = page?.imageUrl
     ? {
         images: [
           {
-            url: page?.ogImageUrl,
+            url: image.url,
             alt: description,
-            type: page?.ogImageType ?? "image/jpeg",
+            type: image.type,
           },
         ],
       }
