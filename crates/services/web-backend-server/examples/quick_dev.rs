@@ -12,6 +12,10 @@ async fn main() -> Result<()> {
     let hc = lib_test::new_client("http://localhost:8888")?;
 
     hc.do_get("/api/health").await?.print().await?;
+    hc.do_post("/api/login", json!({"any": "message"}))
+        .await?
+        .print()
+        .await?;
 
     // static files
     // hc.do_get("/api/index.html").await?.print().await?;

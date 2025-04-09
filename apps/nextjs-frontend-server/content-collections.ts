@@ -39,8 +39,7 @@ const pages = defineCollection({
   schema: (z) => ({
     title: z.string(),
     summary: z.string(),
-    ogImageUrl: z.string().optional(),
-    ogImageType: z.string().optional(),
+    imageUrl: z.string().optional(),
   }),
   transform,
 });
@@ -54,8 +53,7 @@ const blogPosts = defineCollection({
     date: z.string(),
     modifiedTime: z.string(),
     summary: z.string(),
-    ogImageUrl: z.string().optional(),
-    ogImageType: z.string().optional(),
+    imageUrl: z.string().optional(),
   }),
   transform,
 });

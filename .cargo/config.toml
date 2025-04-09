@@ -1,7 +1,7 @@
 # Environments variables set for all `cargo ...` commands.
 [env]
 # web-backend-server -> web_backend_server
-RUST_LOG = "web_backend_server=debug,lib_test=debug"
+RUST_LOG = "web_backend_server=debug,lib_test=debug,lib_core=debug,lib_web=debug,lib_utils=debug"
 
 # -- Service Environment Variables
 # IMPORTANT: 
