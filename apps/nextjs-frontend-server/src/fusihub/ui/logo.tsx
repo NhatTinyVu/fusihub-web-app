@@ -18,11 +18,11 @@ const useLogoSrc = (props?: { theme?: "light" | "dark" }) => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    const isLight = props?.theme
-      ? props?.theme === "light"
-      : theme === "light" || theme === undefined;
+    const isDark = props?.theme
+      ? props?.theme === "dark"
+      : theme === "dark" || !theme;
     setSrc(
-      isLight ? "/favicon/favicon-black.png" : "/favicon/favicon-96x96.png"
+      isDark ? "/favicon/favicon-96x96.png" : "/favicon/favicon-black.png"
     );
   }, [props?.theme, theme]);
 
