@@ -21,7 +21,7 @@ cp .env.example .env
 
 ```sh
 # Terminal 1 - To run the frontend server.
-moon run nextjs-frontend-server:dev
+moon run nextjs-frontend:dev
 ```
 
 ## Watch backend
@@ -40,16 +40,16 @@ cargo watch -q -c -w crates/services/web-backend-server/examples/ -x "run -p web
 ```sh
 docker network create frontend
 cd docker/traefik
-docker-compose up -d
+docker compose up -d
 ```
 
 # Release
 
 ## Nextjs frontend server
 ```sh
-moon run nextjs-frontend-server:build
+moon run nextjs-frontend:build
 
-moon run nextjs-frontend-server:start
+moon run nextjs-frontend:start
 ```
 
 ## Rust backend server
@@ -64,7 +64,8 @@ cargo build -p web-backend-server --release
 #### Nextjs frontend server
 
 ```sh
-docker build -t nextjs-frontend-server . -f ./docker/nextjs-frontend-server.Dockerfile
+docker build -t nextjs-frontend-test . -f ./docker/nextjs-frontend-test.Dockerfile
+docker build -t nextjs-frontend . -f ./docker/nextjs-frontend.Dockerfile
 ```
 #### Rust backend server
 
@@ -76,7 +77,7 @@ docker build -t web-backend-server . -f ./docker/web-backend-server.Dockerfile
 - Place CLOUDFLARE_TUNNEL_TOKEN into .env before run docker-compose
 
 ```sh
-docker-compose up -d --rm
+docker compose up -d
 
 ./target/release/web-backend-server
 ```
@@ -90,7 +91,7 @@ docker-compose up -d --rm
 docker run -d \
   -it --rm \
   -p 127.0.0.1:3000:3000 \
-  nextjs-frontend-server:latest
+  nextjs-frontend:latest
 ```
 #### Rust backend server
 

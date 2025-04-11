@@ -1,4 +1,5 @@
 .*
+**/.git
 Cargo.lock
 Cargo.toml
 **/*.md
@@ -13,10 +14,10 @@ target
 **/.dockerignore
 **/.gitignore
 **/.gitkeep
-.git
 **/README.md
 **/node_modules
 **/.next
 npm-debug.log
 **/sitemap.xml
 **/rss.xml
+**/.moon/cache

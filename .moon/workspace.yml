@@ -3,7 +3,8 @@ $schema: 'https://moonrepo.dev/schemas/workspace.json'
 versionConstraint: '>=1.16.0'
 
 projects:
-  nextjs-frontend-server: 'apps/nextjs-frontend-server'
+  # nextjs-frontend-server: 'apps/nextjs-frontend-server'
+  nextjs-frontend: 'apps/nextjs-frontend'
 
 vcs:
   manager: 'git'

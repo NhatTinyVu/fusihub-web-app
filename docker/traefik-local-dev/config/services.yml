@@ -10,9 +10,9 @@ http:
         - websecure
       tls:
         certResolver: cloudflare
-    nextjs-frontend-server:
+    nextjs-frontend:
       rule: "Host(`local.fusihub.com`)"
-      service: nextjs-frontend-server #
+      service: nextjs-frontend #
       priority: 1
       entryPoints:
         - web
@@ -27,7 +27,7 @@ http:
           - url: "http://localhost:8888"
         passHostHeader: true
 
-    nextjs-frontend-server:
+    nextjs-frontend:
       loadBalancer:
         servers:
           - url: "http://localhost:3000"

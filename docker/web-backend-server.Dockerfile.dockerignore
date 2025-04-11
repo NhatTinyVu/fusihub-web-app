@@ -1,4 +1,5 @@
 .*
+**/.git
 **/node_modules
 Dockerfile
 .dockerignore
@@ -21,3 +22,4 @@ README.md
 tsconfig.eslint.json
 tsconfig.json
 tsconfig.options.json
+**/.moon/cache

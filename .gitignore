@@ -3,6 +3,7 @@
 !.gitignore
 **/certs/*
 **/.content-collections
+!.dockerignore
 
 _*
 # '_' in src dir, ok.

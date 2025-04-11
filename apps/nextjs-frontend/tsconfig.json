@@ -23,7 +23,7 @@
 			"@fusihub/*": ["./src/fusihub/*"],
 			"content-collections": ["./.content-collections/generated"]
 		},
-		"outDir": "../../.moon/cache/types/apps/nextjs-frontend-server"
+		"outDir": "../../.moon/cache/types/apps/nextjs-frontend"
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]
