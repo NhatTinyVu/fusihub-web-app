@@ -57,7 +57,7 @@ importers:
         specifier: ^5.4.5
         version: 5.8.2
 
-  apps/nextjs-frontend-server:
+  apps/nextjs-frontend:
     dependencies:
       '@ark-ui/react':
         specifier: ^5.4.0

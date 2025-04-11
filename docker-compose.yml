@@ -2,12 +2,12 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: ./docker/nextjs-frontend-server.Dockerfile
+      dockerfile: ./docker/nextjs-frontend.Dockerfile
     depends_on:
       - web-backend-server
     restart: unless-stopped
-    container_name: nextjs-frontend-server
-    hostname: nextjs-frontend-server
+    container_name: nextjs-frontend
+    hostname: nextjs-frontend
     ports:
       - "127.0.0.1:3000:3000"
     networks:
